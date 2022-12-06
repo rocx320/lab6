@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-width=1.0">
+    <title>WSD LAB 6 | Javascript Cookies</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body id="body" onload="loadAnimations()">
+<div class="container main-cont d-flex flex-column justify-content-center align-items-center">
+    <div class="top-sect text-center w-100">
+        <h1 class="text-uppercase font-weight-bold text-dark" id="top-head">Javascript Cookies</h1>
+    </div>
+    <div id="first_expiry" class="first_expiry w-75" style="margin-bottom: 10em;">
+        <h3 class="text-light">How long is your stay on our website? 😊</h3>
+        <div class="input-fields d-flex flex-column align-items-center">
+            <input type="number" name="expiry" id="expiry" onkeyup="daysCheck()" placeholder="no. of days...">
+            <span id="daysResp" class="mt-2 bg-light rounded-pill px-2"></span>
+            <button class="btn btn-outline-light rounded-pill mt-4" id="expiryBtn" disabled onclick="sectionOneOut()">Confirm</button>
+        </div>
+    </div>
+    <div id="second_data" class="d-none w-75" style="margin-bottom: 10em;">
+        <h3 class="text-light">Tell us about yourself 🕶</h3>
+        <div class="input-form mt-3">
+            <form action="">
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-lg-6 col-md-12 col-sm-12">
+                        <div class="data-inputs">
+                            <label for="name" class="text-light">Full Name</label>
+                            <input type="text" name="name" id="name" class="form-control" placeholder="Enter your Name">
+                            <span id="nameResp"></span>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12 col-sm-12">
+                        <div class="data-inputs">
+                            <label for="email" class="text-light">Email</label>
+                            <input type="email" name="email" id="email" class="form-control" placeholder="Enter your Email">
+                            <span id="emailResp"></span>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12 col-sm-12 mt-2">
+                        <div class="data-inputs">
+                            <label for="age" class="text-light">Age</label>
+                            <input type="number" name="age" id="age" class="form-control" placeholder="Enter your Age">
+                            <span id="ageResp"></span>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12 col-sm-12 mt-2">
+                        <div class="data-inputs">
+                            <label for="phone" class="text-light">Phone</label>
+                            <input type="tel" name="phone" id="phone" class="form-control" placeholder="Enter your Phone">
+                            <span id="phoneResp"></span>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12 col-sm-12 mt-2">
+                        <div class="data-inputs">
+                            <label for="color" class="text-light">Pick your favorite color</label>
+                            <input type="color" name="color" id="color" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12 col-sm-12 mt-2">
+                        <div class="data-inputs">
+                            <label for="img" class="text-light">Upload your image</label>
+                            <input type="file" name="img" id="img" class="form-control-file text-light">
+                        </div>
+                    </div>
+                    <div class="btn-field d-flex flex-column">
+                        <button class="btn btn-outline-light rounded-pill mt-5" onclick="sectionTwoOut()" type="button">Next</button>
+                        <span id="btnResp" class="mt-2"></span>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div id="pic_section" class="d-none">
+        <div id="img-sect">
+            <img id="pImg" src="" alt="profile_image">
+        </div>
+        <div id="name-sect"></div>
+        <div class="cMan mt-4">
+            <h4 class="text-light">Remove Cookies</h4>
+        </div>
+        <div class="rmCSect d-flex flex-column">
+            <div class="rmBtns d-flex justify-content-around mt-4" id="rmBtns">
+                <button class="btn btn-outline-light rounded-pill" onclick="deleteCookie('name')">Name</button>
+                <button class="btn btn-outline-light rounded-pill" onclick="deleteCookie('email')">Email</button>
+                <button class="btn btn-outline-light rounded-pill" onclick="deleteCookie('age')">Age</button>
+                <button class="btn btn-outline-light rounded-pill" onclick="deleteCookie('phone')">Phone</button>
+            </div>
+            <span id="cookieResp" class="bg-light text-info mt-4 font-weight-bold rounded-pill p-3 d-none"></span>
+        </div>
+    </div>
+    <div class="me text-center" id="footer">
+        <span>Developed By: Hemant Dutta</span>
+        <span><a href="https://github.com/HemantDutta/WSD-LAB-6" target="_blank"><i class="fa-brands fa-github"></i></a></span>
+    </div>
+</div>
+<!--Scripts-->
+<script src="assets/js/jquery-3.6.0.js"></script>
+<script src="assets/js/bootstrap.js"></script>
+<script src="assets/js/scripts.js"></script>
+</body>
+</html>
